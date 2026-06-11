@@ -55,6 +55,10 @@ export default async function BookDetails({
               <p className="form-label">ISBN</p>
               <p style={{ fontSize: '1.2rem' }}>{book.isbn || 'N/A'}</p>
             </div>
+            <div>
+              <p className="form-label">Price</p>
+              <p style={{ fontSize: '1.2rem', color: 'var(--color-terracotta)', fontWeight: 'bold' }}>₹{book.price || 0}</p>
+            </div>
           </div>
 
           {book.description && (

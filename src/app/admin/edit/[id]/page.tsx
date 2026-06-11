@@ -66,8 +66,8 @@ export default async function EditBook({
           </div>
 
           <div className="form-group">
-            <label className="form-label" htmlFor="description">Description</label>
-            <textarea id="description" name="description" className="form-control" rows={4} defaultValue={book.description || ''}></textarea>
+            <label className="form-label" htmlFor="price">Price (₹) *</label>
+            <input type="number" id="price" name="price" className="form-control" min="0" defaultValue={book.price || 0} required />
           </div>
 
           <div style={{ marginTop: '30px', display: 'flex', gap: '20px' }}>

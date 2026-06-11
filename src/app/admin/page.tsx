@@ -9,11 +9,22 @@ export default async function AdminDashboard() {
 
   return (
     <div className="container" style={{ padding: '40px 20px' }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '40px' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '40px', gap: '10px', flexWrap: 'wrap' }}>
         <h1>Admin Dashboard</h1>
-        <Link href="/admin/add" className="btn btn-primary">
-          + Add New Book
-        </Link>
+        <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+          <Link href="/admin/add" className="btn btn-primary">
+            + Add New Book
+          </Link>
+          <Link href="/admin/import" className="btn btn-primary">
+            📤 Import Books
+          </Link>
+          <Link href="/admin/export" className="btn btn-primary">
+            📥 Export Books
+          </Link>
+          <Link href="/admin/visitors" className="btn btn-primary">
+            👥 Manage Visitors
+          </Link>
+        </div>
       </div>
 
       <div className="card">
@@ -26,6 +37,7 @@ export default async function AdminDashboard() {
                 <th style={{ padding: '15px' }}>Title</th>
                 <th style={{ padding: '15px' }}>Author</th>
                 <th style={{ padding: '15px' }}>Category</th>
+                <th style={{ padding: '15px' }}>Price (₹)</th>
                 <th style={{ padding: '15px' }}>Location</th>
                 <th style={{ padding: '15px' }}>Count</th>
                 <th style={{ padding: '15px', textAlign: 'right' }}>Actions</th>
@@ -37,6 +49,9 @@ export default async function AdminDashboard() {
                   <td style={{ padding: '15px', fontWeight: 'bold' }}>{book.title}</td>
                   <td style={{ padding: '15px' }}>{book.author}</td>
                   <td style={{ padding: '15px' }}>{book.category}</td>
+                  <td style={{ padding: '15px', fontWeight: 'bold', color: 'var(--color-terracotta)' }}>
+                    ₹{book.price || 0}
+                  </td>
                   <td style={{ padding: '15px' }}>
                     <span className="shelf-tag" style={{ margin: 0, fontSize: '0.8rem' }}>{book.shelfLocation}</span>
                   </td>
